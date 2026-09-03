@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Binop
+comment1.params=env
+comment1.target=int\ eval(java.util.HashMap)
+comment2.params=ae1\ ae2
+comment2.target=Binop(Aexpr,\ Aexpr)
+numComments=3

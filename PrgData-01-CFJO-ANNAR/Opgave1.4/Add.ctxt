@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Add
+comment1.params=ae1\ ae2
+comment1.target=Add(Aexpr,\ Aexpr)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=env
+comment3.target=int\ eval(java.util.HashMap)
+comment4.params=
+comment4.target=Aexpr\ simplify()
+numComments=5

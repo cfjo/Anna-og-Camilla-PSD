@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Aexpr
+comment1.params=env
+comment1.target=int\ eval(java.util.HashMap)
+comment2.params=
+comment2.target=Aexpr\ simplify()
+numComments=3
