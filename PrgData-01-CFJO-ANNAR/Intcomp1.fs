@@ -10,7 +10,7 @@ module Intcomp1
 type expr = 
   | CstI of int
   | Var of string
-  | Let of (string * expr) list * expr
+  | Let of string * expr * expr
   | Prim of string * expr * expr;;
 
 (* Some closed expressions: *)
@@ -408,12 +408,28 @@ let s2 = scomp e2 [];;
 let s3 = scomp e3 [];;
 let s5 = scomp e5 [];;
 
+let s11 = scomp e11 [];;
+
 (* Output the integers in list inss to the text file called fname: *)
 
 let intsToFile (inss : int list) (fname : string) = 
     let text = String.concat " " (List.map string inss)
     System.IO.File.WriteAllText(fname, text);;
 
+let sinstrToInt (sin: sinstr) =
+    match sin with
+    | SCstI i -> [0;i]
+    | SVar v -> [1;v]
+    | SAdd -> [2]
+    | SSub -> [3]
+    | SMul -> [4]
+    | SPop -> [5]
+    | SSwap -> [6]
+
+let assemble (sinList: List<sinstr>) =
+    sinList |> List.fold (fun acc sin -> match sinstrToInt sin with
+                                            | [v] -> v :: acc
+                                            | [i; v] -> [v;i] @ acc ) [] |> List.rev
 
 
 (* -----------------------------------------------------------------  *)
